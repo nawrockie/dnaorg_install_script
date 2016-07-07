@@ -89,6 +89,7 @@ echo "lines to the '.bashrc' file in your home directory:"
 echo ""
 echo "export DNAORGDIR=\"$DNAORGDIR\""
 echo 'export PERL5LIB="$DNAORGDIR/dnaorg_scripts:$DNAORGDIR/epn-options:$DNAORGDIR/Bio-Easel/blib/lib:$DNAORGDIR/Bio-Easel/blib/arch:$PERL5LIB"'
+echo 'export PATH="$DNAORGDIR/dnaorg_scripts:$PATH"'
 echo ""
 echo "And then source that file to update your current"
 echo "environment with the command:"
@@ -100,6 +101,7 @@ echo "lines to the '.cshrc' file in your home directory:"
 echo ""
 echo "setenv DNAORGDIR \"$DNAORGDIR\""
 echo 'setenv PERL5LIB "$DNAORGDIR/dnaorg_scripts:$DNAORGDIR/epn-options:$DNAORGDIR/Bio-Easel/blib/lib:$DNAORGDIR/Bio-Easel/blib/arch:$PERL5LIB"'
+echo 'setenv PATH "$DNAORGDIR/dnaorg_scripts:$PATH"'
 echo ""
 echo "And then source that file to update your current"
 echo "environment with the command:"
