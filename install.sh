@@ -42,6 +42,7 @@ cd $DNAORGDIR/Bio-Easel
 # clone Easel subdir
 mkdir src
 (cd src; git clone https://github.com/EddyRivasLab/easel.git easel)
+(cd src/easel; git checkout tags/Bio-Easel-0.04; rm -rf .git)
 perl Makefile.PL
 make
 make test
