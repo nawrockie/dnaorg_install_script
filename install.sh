@@ -11,6 +11,8 @@
 set -e
 #
 echo "------------------------------------------------"
+echo "Installing dnaorg_scripts version 0.18"
+echo "------------------------------------------------"
 echo "Determining current directory ... "
 DNAORGDIR=$PWD
 echo "Set DNAORGDIR as current directory ($DNAORGDIR)."
@@ -48,9 +50,9 @@ cd $DNAORGDIR/Bio-Easel
 mkdir src
 (cd src; git clone https://github.com/EddyRivasLab/easel.git easel)
 (cd src/easel; git checkout tags/Bio-Easel-0.05; rm -rf .git)
-#perl Makefile.PL
-#make
-#make test
+perl Makefile.PL
+make
+make test
 echo "Finished building Bio-Easel."
 echo "------------------------------------------------"
 #
