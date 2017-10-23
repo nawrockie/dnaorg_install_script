@@ -1,4 +1,15 @@
-# EPN, Tue May 24 14:27:24 2016
+# EPN, Wed Oct 18 16:24:41 2017
+# version 0.01
+#
+# Installs:
+# dnaorg_scripts v0.18    (https://github.com/nawrockie/dnaorg_scripts/tree/0.18)
+# epn-options v0.03       (https://github.com/nawrockie/epn-options/tree/dnaorg-scripts-0.18)
+# esl-fetch-cds v0.01     (https://github.com/nawrockie/esl-fetch-cds/tree/dnaorg-scripts-0.18)
+# esl-epn-translate v0.01 (https://github.com/nawrockie/esl-epn-translate/tree/dnaorg-scripts-0.18)
+# Bio-Easel v0.05         (https://github.com/nawrockie/Bio-Easel/tree/dnaorg-scripts-0.18)
+# easel                   (https://github.com/EddyRivasLab/easel/tree/Bio-Easel-0.05)
+# 
+########################################################################
 #
 # This file explains how to install the dnaorg_build.pl and
 # dnaorg_annotate.pl scripts for viral genome annotation, along with
@@ -19,20 +30,14 @@
 # - secondary perl scripts: esl-epn-translate.pl and esl-fetch-cds.pl
 #   which are called by dnaorg_annotate.pl and dnaorg_build.pl.
 #
+# - other software packages: infernal v1.1.2 and hmmer 3.1b2
+#
 # install.sh will also output instructions on how to add the DNAORGDIR
 # environment variable value to your .bashrc of .cshrc file, a
 # necessary step you need to complete before you can run
 # dnaorg_annotate.pl or dnaorg_build.pl.
 #
-# install.sh DOES NOT install Infernal or HMMER, both of which must be
-# installed (Infernal v1.1.1 and HMMER 3.1b1 or 3.1.b2) before you can
-# run dnaorg_annotate.pl or dnaorg_build.pl. These are already
-# installed in system-wide directories at NCBI. However, there is
-# commented out code in install.sh for installing Infernal and
-# HMMER. If you want install.sh to install Infernal and HMMER you'll
-# need to modify that file to uncomment those lines.
-# 
-# dnaorg_build.pl and dnaorg_annotate.pl also need the edirect tools
+# dnaorg_build.pl and dnaorg_annotate.pl need the edirect tools
 # (efetch, xtract etc.) and idfetch to be installed in order to
 # work. These are also installed in system-wide NCBI directories.
 #
