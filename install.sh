@@ -20,18 +20,23 @@ echo "Cloning github repos with required code ... "
 # Clone what we need from GitHub (these are all public)
 # dnaorg_scripts
 git clone https://github.com/nawrockie/dnaorg_scripts.git
+(cd dnaorg-scripts; git checkout tags/0.18; rm -rf .git)
 #
 # epn-options
 git clone https://github.com/nawrockie/epn-options.git
+(cd epn-options; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
 #
 # esl-epn-translate
 git clone https://github.com/nawrockie/esl-epn-translate.git
+(cd esl-epn-translate; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
 # 
-# Bio-Easel
-git clone https://github.com/nawrockie/Bio-Easel.git
-#
 # esl-fetch-cds
 git clone https://github.com/nawrockie/esl-fetch-cds.git
+(cd esl-fetch-cds; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
+#
+# Bio-Easel
+git clone https://github.com/nawrockie/Bio-Easel.git
+(cd Bio-Easel; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
 #
 echo "Finished cloning github repos with required code."
 
@@ -42,45 +47,41 @@ cd $DNAORGDIR/Bio-Easel
 # clone Easel subdir
 mkdir src
 (cd src; git clone https://github.com/EddyRivasLab/easel.git easel)
-(cd src/easel; git checkout tags/Bio-Easel-0.04; rm -rf .git)
+(cd src/easel; git checkout tags/Bio-Easel-0.05; rm -rf .git)
 perl Makefile.PL
 make
 make test
 echo "Finished building Bio-Easel."
 echo "------------------------------------------------"
 #
-# Other software that we need to install (or already have installed and in our path):
-#
-# CURRENTLY THIS IS COMMENTED OUT BECAUSE I'M ASSUMING THAT 
-# INFERNAL 1.1.1 AND HMMER 3.1b2 ARE ALREADY INSTALLED.
-# IF THEY ARE NOT, UNCOMMENT ALL OF THE LINES IN THE 
-# BLOCK BELOW BORDERED BY THE LINES OF ~~~~~~~~
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#echo "Installing Infernal 1.1.1 ... "
-#wget eddylab.org/infernal/infernal-1.1.1.tar.gz
-#tar xf infernal-1.1.1.tar.gz
-#cd infernal-1.1.1
+# Other software that we need to install:
+# Infernal 1.1.2 
+# HMMER 3.1b2
+echo "Installing Infernal 1.1.2 ... "
+wget eddylab.org/infernal/infernal-1.1.1.tar.gz
+tar xf infernal-1.1.1.tar.gz
+cd infernal-1.1.1
 #sh ./configure $DNAORGDIR
-#make
-#make install
-#cd easel
-#sh ./configure $DNAORGDIR
-#make install
-#cd $DNAORGDIR
-#echo "Finished installing Infernal 1.1.1."
-#echo "------------------------------------------------"
-#
-#echo "Installing HMMER 3.1b2 ... "
-#wget eddylab.org/software/hmmer3/3.1b2/hmmer/hmmer-3.1b2.tar.gz 
-#tar xf hmmer-3.1b2.tar.gz
-#cd hmmer-3.1.b2
-#sh ./configure $DNAORGDIR
-#make
-#make install
-#cd $DNAORGDIR
-#echo "Finished installing HMMER 3.1b2."
-#echo "------------------------------------------------"
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make
+make install
+cd easel
+sh ./configure $DNAORGDIR
+make install
+cd $DNAORGDIR
+echo "Finished installing Infernal 1.1.1."
+echo "------------------------------------------------"
+
+echo "Installing HMMER 3.1b2 ... "
+wget eddylab.org/software/hmmer3/3.1b2/hmmer/hmmer-3.1b2.tar.gz 
+tar xf hmmer-3.1b2.tar.gz
+cd hmmer-3.1.b2
+sh ./configure $DNAORGDIR
+make
+make install
+cd $DNAORGDIR
+echo "Finished installing HMMER 3.1b2."
+echo "------------------------------------------------"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 # Output the final message:
 echo "The final step is to update your environment variables:"
