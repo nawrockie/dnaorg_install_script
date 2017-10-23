@@ -20,7 +20,7 @@ echo "Cloning github repos with required code ... "
 # Clone what we need from GitHub (these are all public)
 # dnaorg_scripts
 git clone https://github.com/nawrockie/dnaorg_scripts.git
-(cd dnaorg-scripts; git checkout tags/0.18; rm -rf .git)
+(cd dnaorg_scripts; git checkout tags/0.18; rm -rf .git)
 #
 # epn-options
 git clone https://github.com/nawrockie/epn-options.git
@@ -48,9 +48,9 @@ cd $DNAORGDIR/Bio-Easel
 mkdir src
 (cd src; git clone https://github.com/EddyRivasLab/easel.git easel)
 (cd src/easel; git checkout tags/Bio-Easel-0.05; rm -rf .git)
-perl Makefile.PL
-make
-make test
+#perl Makefile.PL
+#make
+#make test
 echo "Finished building Bio-Easel."
 echo "------------------------------------------------"
 #
@@ -58,26 +58,25 @@ echo "------------------------------------------------"
 # Infernal 1.1.2 
 # HMMER 3.1b2
 echo "Installing Infernal 1.1.2 ... "
-wget eddylab.org/infernal/infernal-1.1.1.tar.gz
-tar xf infernal-1.1.1.tar.gz
-cd infernal-1.1.1
-#sh ./configure $DNAORGDIR
+wget eddylab.org/infernal/infernal-1.1.2.tar.gz
+tar xf infernal-1.1.2.tar.gz
+cd infernal-1.1.2
+sh ./configure 
 make
-make install
-cd easel
-sh ./configure $DNAORGDIR
-make install
+# uncomment to install system wide
+#make install
 cd $DNAORGDIR
 echo "Finished installing Infernal 1.1.1."
 echo "------------------------------------------------"
 
 echo "Installing HMMER 3.1b2 ... "
-wget eddylab.org/software/hmmer3/3.1b2/hmmer/hmmer-3.1b2.tar.gz 
+wget eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz 
 tar xf hmmer-3.1b2.tar.gz
-cd hmmer-3.1.b2
-sh ./configure $DNAORGDIR
+cd hmmer-3.1b2
+sh ./configure 
 make
-make install
+# uncomment to sintall system wide
+#make install
 cd $DNAORGDIR
 echo "Finished installing HMMER 3.1b2."
 echo "------------------------------------------------"
