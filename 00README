@@ -1,8 +1,8 @@
-# EPN, Mon Oct 23 15:46:21 2017
-# version 0.02
+# EPN, Mon Nov  6 09:32:15 2017
+# version 0.03
 #
 # Installs:
-# dnaorg_scripts v0.18    (https://github.com/nawrockie/dnaorg_scripts/tree/0.18)
+# dnaorg_scripts v0.19    (https://github.com/nawrockie/dnaorg_scripts/tree/0.19)
 # epn-options v0.03       (https://github.com/nawrockie/epn-options/tree/dnaorg-scripts-0.18)
 # esl-fetch-cds v0.01     (https://github.com/nawrockie/esl-fetch-cds/tree/dnaorg-scripts-0.18)
 # esl-epn-translate v0.01 (https://github.com/nawrockie/esl-epn-translate/tree/dnaorg-scripts-0.18)
