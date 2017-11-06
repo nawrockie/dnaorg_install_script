@@ -11,7 +11,7 @@
 set -e
 #
 echo "------------------------------------------------"
-echo "Installing dnaorg_scripts version 0.18"
+echo "Installing dnaorg_scripts version 0.19"
 echo "------------------------------------------------"
 echo "Determining current directory ... "
 DNAORGDIR=$PWD
@@ -22,23 +22,23 @@ echo "Cloning github repos with required code ... "
 # Clone what we need from GitHub (these are all public)
 # dnaorg_scripts
 git clone https://github.com/nawrockie/dnaorg_scripts.git
-(cd dnaorg_scripts; git checkout tags/0.18; rm -rf .git)
+(cd dnaorg_scripts; git checkout tags/0.19; rm -rf .git)
 #
 # epn-options
 git clone https://github.com/nawrockie/epn-options.git
-(cd epn-options; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
+(cd epn-options; git checkout tags/dnaorg_scripts-0.19; rm -rf .git)
 #
 # esl-epn-translate
 git clone https://github.com/nawrockie/esl-epn-translate.git
-(cd esl-epn-translate; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
+(cd esl-epn-translate; git checkout tags/dnaorg_scripts-0.19; rm -rf .git)
 # 
 # esl-fetch-cds
 git clone https://github.com/nawrockie/esl-fetch-cds.git
-(cd esl-fetch-cds; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
+(cd esl-fetch-cds; git checkout tags/dnaorg_scripts-0.19; rm -rf .git)
 #
 # Bio-Easel
 git clone https://github.com/nawrockie/Bio-Easel.git
-(cd Bio-Easel; git checkout tags/dnaorg-scripts-0.18; rm -rf .git)
+(cd Bio-Easel; git checkout tags/dnaorg_scripts-0.19; rm -rf .git)
 #
 echo "Finished cloning github repos with required code."
 
