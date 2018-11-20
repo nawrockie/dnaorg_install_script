@@ -61,11 +61,12 @@ echo "Finished building Bio-Easel."
 echo "------------------------------------------------"
 #
 # Other software that we need to install:
-# Infernal (develop branch: commit e7259ac)
+# Infernal (develop branch, specific commit)
 # HMMER 3.1b2
+cd $DNAORGDIR
 echo "Installing Infernal ... "
-git clone https://github.com/EddyRivasLab/infernal.git
-cd infernal
+git clone https://github.com/EddyRivasLab/infernal.git infernal-dev
+cd infernal-dev
 git checkout b748e2c
 rm -rf .git
 git clone https://github.com/EddyRivasLab/hmmer
@@ -77,10 +78,10 @@ sh ./configure
 make
 # uncomment to install system wide
 #make install
-cd $DNAORGDIR
 echo "Finished installing Infernal"
 echo "------------------------------------------------"
 
+cd $DNAORGDIR
 echo "Installing HMMER 3.1b2 ... "
 wget eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz 
 tar xf hmmer-3.1b2.tar.gz
