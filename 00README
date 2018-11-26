@@ -1,19 +1,22 @@
-# EPN, Mon Nov  6 09:32:15 2017
-# version 0.03
+# EPN, Mon Nov 26 10:24:29 2018
+# version 0.04
 #
 # Installs:
-# dnaorg_scripts v0.19    (https://github.com/nawrockie/dnaorg_scripts/tree/0.19)
-# epn-options v0.03       (https://github.com/nawrockie/epn-options/tree/dnaorg-scripts-0.18)
-# esl-fetch-cds v0.01     (https://github.com/nawrockie/esl-fetch-cds/tree/dnaorg-scripts-0.18)
-# esl-epn-translate v0.01 (https://github.com/nawrockie/esl-epn-translate/tree/dnaorg-scripts-0.18)
-# Bio-Easel v0.05         (https://github.com/nawrockie/Bio-Easel/tree/dnaorg-scripts-0.18)
-# easel                   (https://github.com/EddyRivasLab/easel/tree/Bio-Easel-0.05)
+# dnaorg_scripts v0.38    (https://github.com/nawrockie/dnaorg_scripts/tree/0.38)
+# epn-options v0.03       (https://github.com/nawrockie/epn-options/tree/dnaorg-scripts-0.38)
+# esl-fetch-cds v0.01     (https://github.com/nawrockie/esl-fetch-cds/tree/dnaorg-scripts-0.38)
+# esl-epn-translate v0.05 (https://github.com/nawrockie/esl-epn-translate/tree/dnaorg-scripts-0.38)
+# Bio-Easel v0.07         (https://github.com/nawrockie/Bio-Easel/tree/dnaorg-scripts-0.38)
+# easel                   (https://github.com/EddyRivasLab/easel/tree/Bio-Easel-0.06) # YES, it shoudl be Bio-Easel-0.06 in the path, not 0.07
 # 
+# dnaorg-build-directories (https://github.com/nawrockie/dnaorg-build-directories) 
+#                          dnaorg-build-directories is the one github repo that is not versioned, there is just a master branch, get the latest commit
+#
 ########################################################################
 #
-# This file explains how to install the dnaorg_build.pl and
-# dnaorg_annotate.pl scripts for viral genome annotation, along with
-# dependencies of those two scripts.
+# This file explains how to install the dnaorg_build.pl,
+# dnaorg_classify.pl and dnaorg_annotate.pl scripts for viral genome
+# annotation, along with dependencies of those three scripts.
 # 
 # This directory contains one other file: install.sh. 
 #
@@ -23,23 +26,26 @@
 #
 # By default install.sh will install the following:
 # 
-# - perl scripts: dnaorg_build.pl dnaorg_annotate.pl
+# - perl scripts: dnaorg_build.pl dnaorg_classify.pl dnaorg_annotate.pl
 #
 # - perl modules: epn-options and Bio-Easel
 #
 # - secondary perl scripts: esl-epn-translate.pl and esl-fetch-cds.pl
-#   which are called by dnaorg_annotate.pl and dnaorg_build.pl.
+#   which are called by dnaorg_annotate.pl, dnaorg_classify.pl and
+#   dnaorg_build.pl.
 #
-# - other software packages: infernal v1.1.2 and hmmer 3.1b2
-#
-# install.sh will also output instructions on how to add the DNAORGDIR
+# - other software packages: infernal and hmmer 3.1b2
+#   The version of infernal is actually a development version 
+#   post-version 1.1.2 but not a stable release.
+# 
+# install.sh will also output instructions on how to add several
 # environment variable value to your .bashrc of .cshrc file, a
 # necessary step you need to complete before you can run
-# dnaorg_annotate.pl or dnaorg_build.pl.
+# the dnaorg* perl scripts.
 #
-# dnaorg_build.pl and dnaorg_annotate.pl need the edirect tools
-# (efetch, xtract etc.) and idfetch to be installed in order to
-# work. These are also installed in system-wide NCBI directories.
+# The dnaorg* scripts need the edirect tools (efetch, xtract etc.) and
+# idfetch to be installed in order to work. These are also installed
+# in system-wide NCBI directories.
 #
 # -----------------------------------------------
 # An example of running install.sh in a new directory called dnaorg-dir in
